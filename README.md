@@ -9,3 +9,10 @@ Options:
   -h, --help     Print help
   -V, --version  Print version
 ```
+
+```
+❯ rsfracker test.txt
+Best word to choose: flatteries with entropy 2.7773626
+Num Correct (0..=10):7
+Answer found! flummeries
+```
