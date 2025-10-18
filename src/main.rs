@@ -102,22 +102,6 @@ fn entropy_guess_tree(candidates: &Vec<String>) -> String {
     let input: usize = input.trim().parse().expect("Could not parse input!");
     assert!(input <= best_word.len(), "Input too large!");
 
-    if buckets
-        .iter()
-        .map(|(_, bucket)| bucket.len())
-        .sum::<usize>()
-        == 2
-    {
-        if !buckets.contains_key(&input) && input != best_word.len() {
-            return buckets
-                .iter()
-                .map(|(_, bucket)| bucket[0].clone())
-                .filter(|word| word != best_word)
-                .last()
-                .expect("Could not get final word!");
-        }
-    }
-
     let rest = buckets.get(&input).expect("Could not get bucket");
 
     return entropy_guess_tree(rest);
