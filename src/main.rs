@@ -10,6 +10,7 @@ use clap::Parser;
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about=None)]
 struct CliArgs {
+    #[arg(help = "Either a text file path containing words, or a list of words")]
     words: Vec<String>,
 }
 
